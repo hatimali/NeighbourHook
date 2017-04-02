@@ -1,0 +1,73 @@
+<ion-side-menus >
+    <ion-side-menu-content>
+  <ion-header-bar class="bar bar-header bar-dark">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon-round" ng-click="toggleLeft"> </button>
+        
+        <h1 class="title" style=" font-size:25px; ">Search It !!</h1>
+      
+    
+  </ion-header-bar>
+  <ion-content class="scroll-ag item-center" >
+<ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+		
+					<div class="item ">
+
+			<rating ng-model="shopRate" max="data.max" readonly="readOnly" ></rating>
+				<h1>{{product.shopName}}</h1>
+
+			</div>
+
+
+			<div class="item item-body ">
+				<img class="myImg" ng-src={{product.shopCover}}>
+
+			</div>
+
+			<div class="item  tabs-secondary tabs-icon-left">
+				<p>{{product.shopArea}}</p>
+				<p>{{product.shopAddr}}</p>
+				<div class="item">
+			  <rating ng-model="data.rating" max="data.max" ></rating>
+		
+
+				
+					<textarea rows="4" cols="50" name="review" ng-model="review" placeholder="Your Review Please ....">
+						</textarea>
+			
+				</div>
+				<button class="button button-large button-block button-royal" style="font-size:20px" ng-click="SendDetails(product,review,data.rating)">
+					<i class="ion-eye" style="font-size:35px">&nbsp;</i>Rate It !!
+				</button>
+		
+	
+			<div class="item" ng-repeat="Review in Reviews" >
+				<h3>{{Review.name}}</h3>
+				<p style="font-size:10px"><i>{{Review.date}}</i></p>
+				<rating ng-model="Review.rate" max="data.max" readonly="readOnly" ></rating>
+			</br>
+		</br>
+				<p>{{Review.review}}</p>
+			</div>
+
+		</div>
+	
+  </ion-content>
+   <ion-footer-bar class="bar-dark">
+          <h1 class="title" style=" font-size:25px; ">F9</h1>
+              <a class="button button-outline button-calm" style="float:right" ng-click="deliver()">For Delivery&nbsp;<i class="ion-android-bicycle" style="font-size:25px"></i></a>
+    </ion-footer-bar>
+      </ion-side-menu-content>
+          <ion-side-menu side="left">
+  <ion-list >
+     <a    ng-href="#home" style="text-decoration: none;" target="_self"> <ion-item nav-clear menu-toggle> <h3> <i class="ion-home" style="font-size:25px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Home  </h3></ion-item></a>
+        <a ng-click="hello('userReviews')" ng-href="#userReviews" style="text-decoration: none;" target="_self"> <ion-item nav-clear menu-toggle>  <h3> <i class="ion-edit" style="font-size:25px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Your Reviews  </h3></ion-item></a>
+         <a  ng-click="hello1()" ng-href="#shopProfile" style="text-decoration: none;" target="_self">  <ion-item nav-clear menu-toggle>  <h3><i class="ion-ios-folder" style="font-size:25px"></i> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add Your Shop</h3></ion-item></a>
+        <a  ng-href="#productForm" style="text-decoration: none;" target="_self">  <ion-item nav-clear menu-toggle>  <h3><i class="ion-upload" style="font-size:25px"></i> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Your Product</h3></ion-item></a>
+    <a ng-href="#about" style="text-decoration: none;" target="_self">  <ion-item nav-clear menu-toggle>  <h3> <i class="ion-information-circled" style="font-size:25px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; About Us</h3></ion-item></a>
+
+   </ion-list> 
+    </ion-side-menu>
+  </ion-side-menus>

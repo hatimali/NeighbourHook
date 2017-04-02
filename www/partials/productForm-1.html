@@ -1,0 +1,220 @@
+
+<ion-side-menus >
+    <ion-side-menu-content>
+  <ion-pane>
+  <ion-header-bar class="bar bar-header bar-dark">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon-round" ng-click="toggleLeft"> </button>
+        
+        <img src="../img/122.png" height="170px" style="margin-top: -68px; margin-left: -20px;">
+      <div id="MM" ng-controller="DashCtrl">
+	  <img src= "../img/2.png"  ng-click = "openPopover($event)" height="25px" width="35px;" style="margin-left: 45px; position: relative; ">
+	  <img src= "../img/m.png"  ng-click = "openPopover($event)" height="25px" width="25px" style="margin-left: 30px; margin-top: 3px;">
+    </div>
+  </ion-header-bar>
+  
+  <ion-content class="scroll-pane">
+<ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+               
+
+ </ion-content>
+ </ion-pane>
+  <ion-footer-bar class="bar bar-footer bar-dark">
+          <h1 class="title" style=" font-size:25px; margin-top: 5px;"><a id="panic" class="button button-outline "  ng-click="showPopup()">Emergency?</a></h1>
+             
+    </ion-footer-bar>
+      </ion-side-menu-content>
+          <ion-side-menu side="left">
+
+   <ion-list >
+     <a    ng-href="#home" style="text-decoration: none;" target="_self"> <ion-item nav-clear menu-toggle> <h3> <i class="ion-home" style="font-size:25px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Home  </h3></ion-item></a>
+        <a ng-click="hello('userReviews')" ng-href="#userReviews" style="text-decoration: none;" target="_self"> <ion-item nav-clear menu-toggle>  <h3> <i class="ion-edit" style="font-size:25px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Your Reviews  </h3></ion-item></a>
+         <a  ng-click="hello1()" ng-href="#shopProfile" style="text-decoration: none;" target="_self">  <ion-item nav-clear menu-toggle>  <h3><i class="ion-ios-folder" style="font-size:25px"></i> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add Your Shop</h3></ion-item></a>
+        <a  ng-href="#productForm" style="text-decoration: none;" target="_self">  <ion-item nav-clear menu-toggle>  <h3><i class="ion-upload" style="font-size:25px"></i> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Your Product</h3></ion-item></a>
+    <a ng-href="#about" style="text-decoration: none;" target="_self">  <ion-item nav-clear menu-toggle>  <h3> <i class="ion-information-circled" style="font-size:25px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; About Us</h3></ion-item></a>
+
+   </ion-list>    
+   </ion-side-menu>
+  </ion-side-menus>
+
+
+    
+	
+  <script id="delivery-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Emergency</h1>
+     <a ng-click="closeModals(50)" class="button button-clear" style="float:right; color:black;"><i class="ion-ios-close" style="font-size:35px; "></i></a>
+    </ion-header-bar>
+    <ion-content align="center">
+      <h4> For Delivery in Karachi,<br> Please Contact On: +923332571546</h4>
+     <p style="font-size:10px"> <i>* Delivery charges may apply according to your location and Item Price which should be more than 200RS . </i></h4>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+
+  <script id="automotive-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Automotive Category</h1>
+         <a ng-click="closeModals(1)" class="button button-clear" style="float:right; color:black;"><i class="ion-ios-close" style="font-size:35px; "></i></a>
+    </ion-header-bar>
+    <ion-content>
+       <label class="item item-input item-select">
+            <div class="input-label">
+                 Choose Automotive Category
+           </div>
+            <select ng-model="selectedAutomotive.categoryId" ng-options="category.categoryId as category.name for category in chooseAutomotive" ng-change="closeModal(1,selectedAutomotive.categoryId)"></select>
+           </label>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+
+<script id="education-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Education & Sports Category</h1>
+       <a ng-click="closeModals(2)" class="button button-clear" style="float:right; color:black;"><i class="ion-ios-close" style="font-size:35px; "></i></a>
+    </ion-header-bar>
+    <ion-content>
+       <label class="item item-input item-select">
+            <div class="input-label">
+                 Choose Something in Education & Sports Category
+           </div>
+            <select ng-model="selectedEducation.categoryId" ng-options="category.categoryId as category.name for category in chooseEducation" ng-change="closeModal(2,selectedEducation.categoryId)"></select>
+           </label>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+
+
+<script id="restaurantsandfoods-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Restaurant And Foods Category</h1>
+        <a ng-click="closeModals(3)" class="button button-clear" style="float:right; color:black;"><i class="ion-ios-close" style="font-size:35px; "></i></a>
+    </ion-header-bar>
+    <ion-content>
+       <label class="item item-input item-select">
+            <div class="input-label">
+                 Choose Something in Restaurant And Foods Category
+           </div>
+            <select ng-model="selectedrestaurantsandfoods.categoryId" ng-options="category.categoryId as category.name for category in chooserestaurantsandfoods" ng-change="closeModal(3,selectedrestaurantsandfoods.categoryId)"></select>
+           </label>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+
+<script id="men-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Men Category</h1>
+    <a ng-click="closeModals(4)" class="button button-clear" style="float:right; color:black;"><i class="ion-ios-close" style="font-size:35px; "></i></a>
+    </ion-header-bar>
+    <ion-content>
+       <label class="item item-input item-select">
+            <div class="input-label">
+                 Choose Something in Men Category
+           </div>
+            <select ng-model="selectedMen.categoryId" ng-options="category.categoryId as category.name for category in chooseMen" ng-change="closeModal(4,selectedMen.categoryId)"></select>
+           </label>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+
+<script id="women-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Women Category</h1>
+    <a ng-click="closeModals(5)" class="button button-clear" style="float:right; color:black;"><i class="ion-ios-close" style="font-size:35px; "></i></a>
+    </ion-header-bar>
+    <ion-content>
+       <label class="item item-input item-select">
+            <div class="input-label">
+                 Choose Something in Women Category
+           </div>
+            <select ng-model="selectedWomen.categoryId" ng-options="category.categoryId as category.name for category in chooseWomen" ng-change="closeModal(5,selectedWomen.categoryId)"></select>
+           </label>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+
+
+
+
+
+<script id="kids-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Kids Category</h1>
+    <a ng-click="closeModals(6)" class="button button-clear" style="float:right; color:black;"><i class="ion-ios-close" style="font-size:35px; "></i></a>
+    </ion-header-bar>
+    <ion-content>
+       <label class="item item-input item-select">
+            <div class="input-label">
+                 Choose Something in Kids Category
+           </div>
+            <select ng-model="selectedKid.categoryId" ng-options="category.categoryId as category.name for category in chooseKid" ng-change="closeModal(6,selectedKid.categoryId)"></select>
+           </label>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+
+<script id="generalitems-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">General Items Category</h1>
+    <a ng-click="closeModals(7)" class="button button-clear" style="float:right; color:black;"><i class="ion-ios-close" style="font-size:35px; "></i></a>
+    </ion-header-bar>
+    <ion-content>
+       <label class="item item-input item-select">
+            <div class="input-label">
+                 Choose Something in General Items Category
+           </div>
+            <select ng-model="selectedgenItem.categoryId" ng-options="category.categoryId as category.name for category in choosegenItem" ng-change="closeModal(7,selectedgenItem.categoryId)"></select>
+           </label>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+<script id="householdgoods-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">House Hold & Tech. Category</h1>
+    <a ng-click="closeModals(8)" class="button button-clear" style="float:right; color:black;"><i class="ion-ios-close" style="font-size:35px; "></i></a>
+    </ion-header-bar>
+    <ion-content>
+       <label class="item item-input item-select">
+            <div class="input-label">
+                 Choose Something in House Hold & Tech. Category
+           </div>
+            <select ng-model="selectedhouseHold.categoryId" ng-options="category.categoryId as category.name for category in choosehouseHold" ng-change="closeModal(8,selectedhouseHold.categoryId)"></select>
+           </label>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+
+<script id = "popover.html" type = "text/ng-template">
+   <ion-popover-view>
+	
+      <ion-header-bar>
+         <h1 class = "title">Popover Title</h1>
+      </ion-header-bar>
+		
+      <ion-content>
+         Popover Content!
+      </ion-content>
+		
+   </ion-popover-view>
+</script>
+

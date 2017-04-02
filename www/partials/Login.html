@@ -1,0 +1,56 @@
+
+
+
+
+	<div class="list row back-color  scroll-ag padding">
+
+		<form class="col col-center" role="form" ng-submit="login(authorizationForm)" name="authorizationForm" novalidate="" style="margin-top: -40px;">
+		<h1 style="color: white; font-size: 40px; "align="center"> Sign-In </h1>
+		</br>
+		<h1 style="color: white;">Log into your Account </h1>
+		</br>
+			<label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.username.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.username.$valid}">
+				<input type="text" name="username" ng-model="username" placeholder="Username" ng-minlength="5" ng-maxlength="20" required>
+			</label>
+			<div class="error-container" ng-show="authorizationForm.username.$error && authorizationForm.$submitted" ng-messages="authorizationForm.username.$error">
+				<div ng-messages-include="error-list.html"></div>
+			</div>
+			</br>
+			<label class="item item-input" ng-class="{ 'has-errors' : authorizationForm.password.$invalid && authorizationForm.$submitted, 'no-errors' : authorizationForm.password.$valid  && authorizationForm.$submitted}">
+				<input type="password" name="password" ng-model="password" placeholder="Password"  ng-minlength="5" ng-maxlength="20" required>
+			</label>
+			<div class="error-container last-error-container" ng-show="authorizationForm.password.$error && authorizationForm.$submitted" ng-messages="authorizationForm.password.$error">
+				<div ng-messages-include="error-list.html"></div>
+			</div>
+			</br>
+			
+			<button  style="float: right;" id= "LoginBtn" class="button button-full" type="submit" >
+				Login
+			</button>
+			<a style="color: white; font-size: 14px;" ng-href="#register">Don't have an account yet?</a>
+
+			<div class="row ">
+		  <a ng-click="urlOpen()"><div class="social-button"><img src="img/fb-button.png" style="width: 94%;
+    height: 49.1px; padding-left: 6%;"></div></a>
+		 
+		    <a ng-click="urlOpenG()"><div class="social-button"><img src="img/gmail.png" style="width: 92%; height: 49px;"></div></a>
+		</div>
+		</form>
+		
+
+
+	<script id="error-list.html" type="text/ng-template">
+		<div class="error" ng-message="required">
+			<i class="ion-information-circled"></i>
+			This field is required!
+		</div>
+		<div class="error" ng-message="minlength">
+			<i class="ion-information-circled"></i>
+			Minimum length of this field is 5 characters!
+		</div>
+		<div class="error" ng-message="maxlength">
+			<i class="ion-information-circled"></i>
+			Maximum length of this field is 20 characters!
+		</div>
+	</script>
+	</div>

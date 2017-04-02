@@ -1,0 +1,105 @@
+
+
+<ion-slide-box on-slide-changed="slideHasChanged($index)" class=" scroll-pane1">
+  <ion-slide>
+    <div class="box ">
+    	<form class="col col-center"  >
+
+		<h1 style="color: white; font-size: 45px; padding-top: 100px" align="center";> Sign-Up </h1>
+		</br>
+		
+		<h1 style="color: white;"> We welcome you on board!</h1>
+		</br>
+				<label class="item item-input " >
+			<span class="input-label">UserName :</span>
+			<input type="text" name="username" placeholder="UserName" ng-model="username" ng-minlength="5" ng-maxlength="20" required>
+		</label>
+	</br>
+		<label class="item item-input " >
+			<span class="input-label">Password :</span>
+			<input type="password" name="password" placeholder="Password" ng-model="password" ng-minlength="5" ng-maxlength="20" required>
+		</label>
+		</br>
+
+		<label class="item item-input " >
+			<span class="input-label">Email</span>
+			<input type="email" name="email" placeholder="Email" ng-model="email" required>
+		</label>
+
+
+		</br>
+		<label class="item item-input ">
+			<span class="input-label">Contact :</span>
+			<input type="number" name="contact" placeholder="Contact number" ng-model="contact"  required>
+		</label>
+	
+		</br>
+		
+	</form>
+
+
+    </div>
+
+  </ion-slide>
+  <ion-slide>
+		
+    <div class="box ">
+    <h1 style="color: white; font-size: 40px; padding-top: 14px;" align="center";> Sign-Up </h1>
+		</br>
+	
+    <div id="map_nearest" data-tap-disabled="true" ></div> 
+<br/>
+	<label class="item item-input " >
+			<span class="input-label">Address</span>
+			<input type="text" name="email" placeholder="Short Address" ng-model="address" required>
+		</label>
+    <a  class="button button-block" ng-click="submit(username,password,email,contact,address)"> Submit</a>
+<br/>
+    <a  class="button button-block button-calm" ng-href="#login"> Already have an account ? Login</a>
+
+    </div>
+      </ion-slide>
+
+</ion-slide-box>
+
+<!-- <div class="list row padding scroll-pane1">
+
+	<form class="col col-center"  style="margin-top: -60px;">
+
+		<h1 style="color: white; font-size: 40px;" align="center";> Sign-Up </h1>
+		</br>
+		 <div id="status-buttons" class="text-center">
+              <a ui-sref-active="active" ui-sref="#Register" ><strong><span>1</span> Basics</a></strong>
+              <a ui-sref-active="disabled" ui-sref="#Address"><span>2</span> Address </a>
+          </div>
+		<h1 style="color: white;"> We welcome you on board!</h1>
+		</br>
+				<label class="item item-input " >
+			<span class="input-label">UserName :</span>
+			<input type="text" name="username" placeholder="UserName" ng-model="username" ng-minlength="5" ng-maxlength="20" required>
+		</label>
+	</br>
+		<label class="item item-input " >
+			<span class="input-label">Password :</span>
+			<input type="password" name="password" placeholder="Password" ng-model="password" ng-minlength="5" ng-maxlength="20" required>
+		</label>
+		</br>
+
+		<label class="item item-input " >
+			<span class="input-label">Email</span>
+			<input type="email" name="email" placeholder="Email" ng-model="email" required>
+		</label>
+
+
+		</br>
+		<label class="item item-input ">
+			<span class="input-label">Contact :</span>
+			<input type="number" name="contact" placeholder="Contact number" ng-model="contact"  required>
+		</label>
+	
+		</br>
+		
+	</form>
+
+
+</div> -->

@@ -1,0 +1,83 @@
+
+<ion-side-menus >
+    <ion-side-menu-content>
+  <ion-pane>
+  <ion-header-bar class="bar bar-header bar-dark">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon-round" ng-click="toggleLeft"> </button>
+        
+        <h1 class="title" style=" font-size:25px; ">Search It !!</h1>
+      
+    
+  </ion-header-bar>
+  <ion-header-bar class="bar bar-subheader bar-stable">
+  
+        
+        <h1 class="title" style=" font-size:25px; ">Add Your Shop</h1>
+      
+    
+  </ion-header-bar>
+  <ion-content class="scroll-pane">
+<ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+               
+<div data-role="content" class="list">   
+        
+			<label class="item item-input list-inset">
+				<input type="text" ng-model="shopName" name="shopName" placeholder="ShopName" >
+			</label>
+			<label class="item item-input list-inset">
+				<input type="text" ng-model="shopArea" placeholder="Area">
+			</label>
+		<label class="item item-input list-inset">
+				<input type="text" name="shopAddr" ng-model="shopAddr" placeholder="Address">
+			</label>
+
+			<label class="item item-input list-inset">
+				<input type="text" name="shopLong" ng-model="shopLong" placeholder="Longitude" >
+			</label>
+			<label class="item item-input list-inset">
+				<input type="text" name="shopLat" ng-model="shopLat" placeholder="Latitude" >
+			</label>
+				<label class="item item-input list-inset">Categories:</label>
+				<ion-scroll zooming="true" direction="y" style="width: 1200px; height: 200px">
+			   <label class="item" ng-repeat="(color,enabled) in colors">
+			   	<ion-checkbox ng-model="colors[color]">{{color}}</ion-checkbox>
+       
+    </label>
+     </ion-scroll>
+  
+    <label class="item item-file">
+    	 <input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(this)" />
+    	   <div ng-repeat="step in stepsModel">
+        <img class="thumb" ng-src="{{step}}" />
+    </div>
+    	</label>
+			
+   	<button class="button button-full button-calm" type="submit" ng-click="SendShop(shopName,shopArea,shopAddr,shopLong,shopLat)">
+				Submit
+			</button>
+
+</div>
+ </ion-content>
+ </ion-pane>
+  <ion-footer-bar class="bar-dark">
+          <h1 class="title" style=" font-size:25px; ">F9</h1>
+              <a class="button button-outline button-calm" style="float:right" ng-click="deliver()">For Delivery&nbsp;<i class="ion-android-bicycle" style="font-size:25px"></i></a>
+    </ion-footer-bar>
+      </ion-side-menu-content>
+          <ion-side-menu side="left">
+
+  <ion-list >
+     <a    ng-href="#home" style="text-decoration: none;" target="_self"> <ion-item nav-clear menu-toggle> <h3> <i class="ion-home" style="font-size:25px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Home  </h3></ion-item></a>
+        <a ng-click="hello('userReviews')" ng-href="#userReviews" style="text-decoration: none;" target="_self"> <ion-item nav-clear menu-toggle>  <h3> <i class="ion-edit" style="font-size:25px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Your Reviews  </h3></ion-item></a>
+         <a  ng-click="hello1()" ng-href="#shopProfile" style="text-decoration: none;" target="_self">  <ion-item nav-clear menu-toggle>  <h3><i class="ion-ios-folder" style="font-size:25px"></i> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add Your Shop</h3></ion-item></a>
+        <a  ng-href="#productForm" style="text-decoration: none;" target="_self">  <ion-item nav-clear menu-toggle>  <h3><i class="ion-upload" style="font-size:25px"></i> &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Upload Your Product</h3></ion-item></a>
+    <a ng-href="#about" style="text-decoration: none;" target="_self">  <ion-item nav-clear menu-toggle>  <h3> <i class="ion-information-circled" style="font-size:25px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; About Us</h3></ion-item></a>
+
+   </ion-list>    </ion-side-menu>
+  </ion-side-menus>
+
+
+	

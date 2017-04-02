@@ -1,0 +1,51 @@
+   <ion-side-menus >
+    <ion-side-menu-content>
+   <ion-header-bar class="bar bar-header bar-dark">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon-round" ng-click="toggleLeft"> </button>
+        
+        <h1 class="title" style=" font-size:25px; ">Search It !!</h1>
+      
+    
+  </ion-header-bar>
+   <ion-header-bar class="bar bar-subheader bar-stable">
+  
+        
+        <h1 class="title" style=" font-size:25px; ">Admin Shops</h1>
+      
+    
+  </ion-header-bar>
+    <ion-content class="scroll-bg item-center" >
+  <div class="list font-all">
+      <div ng-repeat="place in places" >
+        <a class="item item-avatar" >
+          <img class="product-thumbnail" ng-src={{place.cover}}>
+         <h2 style="font-size:22px" >Shop Name: {{place.name}}</h2>
+         <p style="font-size:10px">Shop Category: {{place.category}}</p>
+         <p style="font-size:10px">Shop Area: {{place.area}}</p>
+
+           <p style="font-size:10px">Shop Coordinates: {{place.longi}} , {{place.lat}}</p>
+  <button class="button button-small  button-balanced" ng-click="approve(place)">
+       Approve
+        </button>
+        <button class="button button-small button-assertive" ng-click="reject(place)">
+        Reject
+        </button>
+        </a>
+      
+       </div>
+          </div>
+      </ion-content>
+       <ion-footer-bar class="bar-dark">
+          <h1 class="title" style=" font-size:25px; ">F9</h1>
+              <a class="button button-outline button-calm" style="float:right" ng-click="deliver()">For Delivery&nbsp;<i class="ion-android-bicycle" style="font-size:25px"></i></a>
+    </ion-footer-bar>
+    </ion-side-menu-content>
+          <ion-side-menu side="left">
+
+   <ion-list >
+ <a    ng-href="#adminShops" style="text-decoration: none;" target="_self"> <ion-item nav-clear menu-toggle> <h4> <i class="ion-home" style="font-size:25px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Verify Shops  </h4></ion-item></a>
+          <a    ng-href="#adminProducts" style="text-decoration: none;" target="_self"> <ion-item nav-clear menu-toggle> <h4> <i class="ion-home" style="font-size:25px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Verify Products  </h4></ion-item></a>
+          <a    ng-href="#productStore" style="text-decoration: none;" target="_self"> <ion-item nav-clear menu-toggle> <h4> <i class="ion-home" style="font-size:25px"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Store </h4></ion-item></a>
+   </ion-list>    
+ </ion-side-menu>
+  </ion-side-menus>
