@@ -1,0 +1,2 @@
+# NeighbourHook
+NeighbourHook is a hybrid mobile application build on MEANstack and Ionic. It's basically connecting you to the people living nearby.It can be seen as an ice breaker in areas where one does not know who lives next door to them, and once you are to connected to our app, the app will help you build mutual beneficiary relationship with them. For example, Lost a pet? Post it there. Borrow a ladder from your neighbors etc.
